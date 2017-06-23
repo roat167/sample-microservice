@@ -1,4 +1,4 @@
-package io.kapp.samplemicroservice;
+package io.kapp.samplemicroservice.customer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,8 +1,14 @@
 package io.kapp.samplemicroservice.customer.data.domain;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import io.kapp.samplemicroservice.customer.validator.Phone;
 
 @Document
 public class Customer {
@@ -10,11 +16,17 @@ public class Customer {
 	@Id
 	private Long id;
 	@Indexed
+	@Size(min = 4, max = 20)
 	private String username;
+	@NotEmpty
 	private String password;
+	@NotEmpty
 	private String firstName;
+	@NotEmpty
 	private String lastName;
+	@Email
 	private String email;
+	@Phone
 	private String contactNo;
 
 	public Customer() {}
