@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import io.kapp.samplemicroservice.customer.validator.Phone;
 
-@Document
+@Document(collection = "customer")
 public class Customer {
 
 	@Id
